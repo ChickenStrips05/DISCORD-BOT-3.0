@@ -13,7 +13,7 @@ A Python-based Discord bot with enhanced features and functionality.
 
 - Python 3.8 or higher
 - `discord.py` library
-- Other dependencies listed in `requirements.txt`
+
 
 ## Installation
 
