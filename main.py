@@ -4,9 +4,6 @@ from pathlib import Path
 with open("settings.json","r") as f:
     settings = json.loads(f.read())
 
-
-
-
 def getAllCommands():
     commands = {}
     for file in Path("commands/").rglob("*.py"):
@@ -14,13 +11,11 @@ def getAllCommands():
             commands[file.stem] = str(file)
     return commands
 
-
 client = discord.Client(intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
-
 
 @client.event
 async def on_message(message):
@@ -65,6 +60,5 @@ async def on_message(message):
         else:
             await channel.send("Uknown command.")
             pass
-        
 
 client.run(settings["token"])
